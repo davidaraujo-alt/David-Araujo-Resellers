@@ -97,6 +97,11 @@
     .ind-dot{font-size:10px;}
     .ind-dot.pos{color:#27AE60;}
     .ind-dot.neg{color:#E74C3C;}
+    .filter-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
+    .filter-row span{font-size:12px;font-weight:700;color:#AAA;text-transform:uppercase;letter-spacing:.5px;}
+    .filter-pills{display:flex;gap:6px;}
+    .fpill{padding:5px 16px;border-radius:20px;border:1.5px solid #444;background:transparent;color:#888;font-size:11px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;letter-spacing:.5px;transition:all .15s;}
+    .fpill.active{background:var(--yellow);color:#111;border-color:var(--yellow);}
   </style>
 </head>
 <body>
@@ -174,10 +179,14 @@
   <div class="dk-footnote">* semana em andamento (dados até D-1)</div>
 
   <div class="dk-chart-wrap" style="margin-top:28px">
-    <div style="font-size:12px;font-weight:700;color:#AAA;margin-bottom:16px;text-transform:uppercase;letter-spacing:.5px">
-      Mix de Dispositivos por Mês &nbsp;·&nbsp; Pro 3 vs Smart 2
+    <div class="filter-row">
+      <span>Mix de Dispositivos por Nível &nbsp;·&nbsp; Pro 3 vs Smart 2</span>
+      <div class="filter-pills">
+        <button class="fpill active" id="fpill-abr" onclick="setMixFilter('abr',this)">ABR</button>
+        <button class="fpill active" id="fpill-mai" onclick="setMixFilter('mai',this)">MAI</button>
+      </div>
     </div>
-    <canvas id="chartMix" style="max-height:220px"></canvas>
+    <canvas id="chartMix" style="max-height:260px"></canvas>
   </div>
 </div>
 </div>
@@ -338,6 +347,29 @@ function buildLine() {
   });
 }
 
+// ── Filtro de mês ────────────────────────────────────────────────────────────
+let _mixChart = null;
+let _activeAbr = true, _activeMai = true;
+
+function setMixFilter(mes, el) {
+  if (mes === 'abr') _activeAbr = !_activeAbr;
+  if (mes === 'mai') _activeMai = !_activeMai;
+  // garante que pelo menos 1 ativo
+  if (!_activeAbr && !_activeMai) {
+    if (mes==='abr') _activeAbr = true;
+    else             _activeMai = true;
+  }
+  document.getElementById('fpill-abr').classList.toggle('active', _activeAbr);
+  document.getElementById('fpill-mai').classList.toggle('active', _activeMai);
+  if (_mixChart) {
+    _mixChart.data.datasets[0].hidden = !_activeAbr;
+    _mixChart.data.datasets[1].hidden = !_activeAbr;
+    _mixChart.data.datasets[2].hidden = !_activeMai;
+    _mixChart.data.datasets[3].hidden = !_activeMai;
+    _mixChart.update();
+  }
+}
+
 // ── Mix Pro 3 vs Smart 2 por nível ───────────────────────────────────────────
 // Abr = cores sólidas | Mai = cores translúcidas com borda
 // Cada nível tem 2 barras empilhadas (stack: abr / stack: mai)
@@ -354,7 +386,7 @@ function buildMixChart() {
     }
   };
 
-  new Chart(document.getElementById('chartMix'), {
+  _mixChart = new Chart(document.getElementById('chartMix'), {
     type: 'bar',
     plugins: [ChartDataLabels],
     data: {
