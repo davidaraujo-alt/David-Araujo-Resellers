@@ -301,15 +301,15 @@ function buildDevBar() {
     },
   ];
 
-  // Anotações de eventos — acima das barras, caixa amarela
-  // yAdjust negativo = sobe acima do topo do gráfico (para dentro do padding)
+  // Anotações de eventos
+  // position:'end' ancora no TOPO da escala Y; yAdjust negativo empurra acima das barras
   const EVENTS = [
-    ['04/05', ['04/05', 'LIVE LANÇAMENTO'],                      -22],
-    ['05/05', ['05/05', 'NOVOS INCENTIVOS', 'PREÇO ESPECIAL'],   -85],
-    ['08/05', ['08/05', 'PREÇO ESPECIAL'],                       -22],
-    ['18/05', ['18/05', 'PREÇO ESPECIAL', 'CAMPANHA EMP & TOP'], -22],
-    ['19/05', ['19/05', 'NOVOS INCENTIVOS'],                     -85],
-    ['26/05', ['26/05', 'PREÇO ESPECIAL'],                       -22],
+    ['04/05', ['04/05', 'LIVE LANÇAMENTO'],                      -18],
+    ['05/05', ['05/05', 'NOVOS INCENTIVOS', 'PREÇO ESPECIAL'],   -80],
+    ['08/05', ['08/05', 'PREÇO ESPECIAL'],                       -18],
+    ['18/05', ['18/05', 'PREÇO ESPECIAL', 'CAMPANHA EMP & TOP'], -18],
+    ['19/05', ['19/05', 'NOVOS INCENTIVOS'],                     -80],
+    ['26/05', ['26/05', 'PREÇO ESPECIAL'],                       -18],
   ];
   const evAnno = {};
   EVENTS.forEach(([dt, txt, yAdj], i) => {
@@ -324,7 +324,7 @@ function buildDevBar() {
       label: {
         content: txt,
         display: true,
-        position: 'start',
+        position: 'end',
         yAdjust: yAdj,
         backgroundColor: 'rgba(255,230,0,0.95)',
         color: '#111',
