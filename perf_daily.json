@@ -1,0 +1,1142 @@
+[
+  {
+    "data": "2026-04-01",
+    "nivel": "Aprendiz",
+    "tpv": 5394880.0
+  },
+  {
+    "data": "2026-04-01",
+    "nivel": "Empreendedor",
+    "tpv": 265268.0
+  },
+  {
+    "data": "2026-04-01",
+    "nivel": "Especialista",
+    "tpv": 113636.0
+  },
+  {
+    "data": "2026-04-01",
+    "nivel": "Top Empreendedor",
+    "tpv": 827927.0
+  },
+  {
+    "data": "2026-04-02",
+    "nivel": "Aprendiz",
+    "tpv": 6519311.0
+  },
+  {
+    "data": "2026-04-02",
+    "nivel": "Empreendedor",
+    "tpv": 349805.0
+  },
+  {
+    "data": "2026-04-02",
+    "nivel": "Especialista",
+    "tpv": 143825.0
+  },
+  {
+    "data": "2026-04-02",
+    "nivel": "Top Empreendedor",
+    "tpv": 1054756.0
+  },
+  {
+    "data": "2026-04-03",
+    "nivel": "Aprendiz",
+    "tpv": 4466641.0
+  },
+  {
+    "data": "2026-04-03",
+    "nivel": "Empreendedor",
+    "tpv": 245426.0
+  },
+  {
+    "data": "2026-04-03",
+    "nivel": "Especialista",
+    "tpv": 106895.0
+  },
+  {
+    "data": "2026-04-03",
+    "nivel": "Top Empreendedor",
+    "tpv": 814665.0
+  },
+  {
+    "data": "2026-04-04",
+    "nivel": "Aprendiz",
+    "tpv": 5665544.0
+  },
+  {
+    "data": "2026-04-04",
+    "nivel": "Empreendedor",
+    "tpv": 370214.0
+  },
+  {
+    "data": "2026-04-04",
+    "nivel": "Especialista",
+    "tpv": 136580.0
+  },
+  {
+    "data": "2026-04-04",
+    "nivel": "Top Empreendedor",
+    "tpv": 1080605.0
+  },
+  {
+    "data": "2026-04-05",
+    "nivel": "Aprendiz",
+    "tpv": 3984297.0
+  },
+  {
+    "data": "2026-04-05",
+    "nivel": "Empreendedor",
+    "tpv": 261759.0
+  },
+  {
+    "data": "2026-04-05",
+    "nivel": "Especialista",
+    "tpv": 101028.0
+  },
+  {
+    "data": "2026-04-05",
+    "nivel": "Top Empreendedor",
+    "tpv": 736210.0
+  },
+  {
+    "data": "2026-04-06",
+    "nivel": "Aprendiz",
+    "tpv": 5056177.0
+  },
+  {
+    "data": "2026-04-06",
+    "nivel": "Empreendedor",
+    "tpv": 263841.0
+  },
+  {
+    "data": "2026-04-06",
+    "nivel": "Especialista",
+    "tpv": 107160.0
+  },
+  {
+    "data": "2026-04-06",
+    "nivel": "Top Empreendedor",
+    "tpv": 670477.0
+  },
+  {
+    "data": "2026-04-07",
+    "nivel": "Aprendiz",
+    "tpv": 5704044.0
+  },
+  {
+    "data": "2026-04-07",
+    "nivel": "Empreendedor",
+    "tpv": 258655.0
+  },
+  {
+    "data": "2026-04-07",
+    "nivel": "Especialista",
+    "tpv": 111732.0
+  },
+  {
+    "data": "2026-04-07",
+    "nivel": "Top Empreendedor",
+    "tpv": 820220.0
+  },
+  {
+    "data": "2026-04-08",
+    "nivel": "Aprendiz",
+    "tpv": 5537311.0
+  },
+  {
+    "data": "2026-04-08",
+    "nivel": "Empreendedor",
+    "tpv": 266477.0
+  },
+  {
+    "data": "2026-04-08",
+    "nivel": "Especialista",
+    "tpv": 161771.0
+  },
+  {
+    "data": "2026-04-08",
+    "nivel": "Top Empreendedor",
+    "tpv": 808790.0
+  },
+  {
+    "data": "2026-04-09",
+    "nivel": "Aprendiz",
+    "tpv": 5894466.0
+  },
+  {
+    "data": "2026-04-09",
+    "nivel": "Empreendedor",
+    "tpv": 282498.0
+  },
+  {
+    "data": "2026-04-09",
+    "nivel": "Especialista",
+    "tpv": 161129.0
+  },
+  {
+    "data": "2026-04-09",
+    "nivel": "Top Empreendedor",
+    "tpv": 840924.0
+  },
+  {
+    "data": "2026-04-10",
+    "nivel": "Aprendiz",
+    "tpv": 7175545.0
+  },
+  {
+    "data": "2026-04-10",
+    "nivel": "Empreendedor",
+    "tpv": 378927.0
+  },
+  {
+    "data": "2026-04-10",
+    "nivel": "Especialista",
+    "tpv": 182628.0
+  },
+  {
+    "data": "2026-04-10",
+    "nivel": "Top Empreendedor",
+    "tpv": 1021703.0
+  },
+  {
+    "data": "2026-04-11",
+    "nivel": "Aprendiz",
+    "tpv": 7058649.0
+  },
+  {
+    "data": "2026-04-11",
+    "nivel": "Empreendedor",
+    "tpv": 414205.0
+  },
+  {
+    "data": "2026-04-11",
+    "nivel": "Especialista",
+    "tpv": 209918.0
+  },
+  {
+    "data": "2026-04-11",
+    "nivel": "Top Empreendedor",
+    "tpv": 1206819.0
+  },
+  {
+    "data": "2026-04-12",
+    "nivel": "Aprendiz",
+    "tpv": 4844359.0
+  },
+  {
+    "data": "2026-04-12",
+    "nivel": "Empreendedor",
+    "tpv": 305565.0
+  },
+  {
+    "data": "2026-04-12",
+    "nivel": "Especialista",
+    "tpv": 164263.0
+  },
+  {
+    "data": "2026-04-12",
+    "nivel": "Top Empreendedor",
+    "tpv": 913812.0
+  },
+  {
+    "data": "2026-04-13",
+    "nivel": "Aprendiz",
+    "tpv": 5059803.0
+  },
+  {
+    "data": "2026-04-13",
+    "nivel": "Empreendedor",
+    "tpv": 230892.0
+  },
+  {
+    "data": "2026-04-13",
+    "nivel": "Especialista",
+    "tpv": 157995.0
+  },
+  {
+    "data": "2026-04-13",
+    "nivel": "Top Empreendedor",
+    "tpv": 729520.0
+  },
+  {
+    "data": "2026-04-14",
+    "nivel": "Aprendiz",
+    "tpv": 5375071.0
+  },
+  {
+    "data": "2026-04-14",
+    "nivel": "Empreendedor",
+    "tpv": 277241.0
+  },
+  {
+    "data": "2026-04-14",
+    "nivel": "Especialista",
+    "tpv": 125725.0
+  },
+  {
+    "data": "2026-04-14",
+    "nivel": "Top Empreendedor",
+    "tpv": 793510.0
+  },
+  {
+    "data": "2026-04-15",
+    "nivel": "Aprendiz",
+    "tpv": 5950404.0
+  },
+  {
+    "data": "2026-04-15",
+    "nivel": "Empreendedor",
+    "tpv": 263412.0
+  },
+  {
+    "data": "2026-04-15",
+    "nivel": "Especialista",
+    "tpv": 155760.0
+  },
+  {
+    "data": "2026-04-15",
+    "nivel": "Top Empreendedor",
+    "tpv": 860753.0
+  },
+  {
+    "data": "2026-04-16",
+    "nivel": "Aprendiz",
+    "tpv": 6031072.0
+  },
+  {
+    "data": "2026-04-16",
+    "nivel": "Empreendedor",
+    "tpv": 267926.0
+  },
+  {
+    "data": "2026-04-16",
+    "nivel": "Especialista",
+    "tpv": 169405.0
+  },
+  {
+    "data": "2026-04-16",
+    "nivel": "Top Empreendedor",
+    "tpv": 848477.0
+  },
+  {
+    "data": "2026-04-17",
+    "nivel": "Aprendiz",
+    "tpv": 6765151.0
+  },
+  {
+    "data": "2026-04-17",
+    "nivel": "Empreendedor",
+    "tpv": 336521.0
+  },
+  {
+    "data": "2026-04-17",
+    "nivel": "Especialista",
+    "tpv": 217643.0
+  },
+  {
+    "data": "2026-04-17",
+    "nivel": "Top Empreendedor",
+    "tpv": 1032819.0
+  },
+  {
+    "data": "2026-04-18",
+    "nivel": "Aprendiz",
+    "tpv": 7032725.0
+  },
+  {
+    "data": "2026-04-18",
+    "nivel": "Empreendedor",
+    "tpv": 386203.0
+  },
+  {
+    "data": "2026-04-18",
+    "nivel": "Especialista",
+    "tpv": 248961.0
+  },
+  {
+    "data": "2026-04-18",
+    "nivel": "Top Empreendedor",
+    "tpv": 1247527.0
+  },
+  {
+    "data": "2026-04-19",
+    "nivel": "Aprendiz",
+    "tpv": 5105224.0
+  },
+  {
+    "data": "2026-04-19",
+    "nivel": "Empreendedor",
+    "tpv": 348217.0
+  },
+  {
+    "data": "2026-04-19",
+    "nivel": "Especialista",
+    "tpv": 178691.0
+  },
+  {
+    "data": "2026-04-19",
+    "nivel": "Top Empreendedor",
+    "tpv": 995084.0
+  },
+  {
+    "data": "2026-04-20",
+    "nivel": "Aprendiz",
+    "tpv": 5953695.0
+  },
+  {
+    "data": "2026-04-20",
+    "nivel": "Empreendedor",
+    "tpv": 336085.0
+  },
+  {
+    "data": "2026-04-20",
+    "nivel": "Especialista",
+    "tpv": 167297.0
+  },
+  {
+    "data": "2026-04-20",
+    "nivel": "Top Empreendedor",
+    "tpv": 942145.0
+  },
+  {
+    "data": "2026-04-21",
+    "nivel": "Aprendiz",
+    "tpv": 4674850.0
+  },
+  {
+    "data": "2026-04-21",
+    "nivel": "Empreendedor",
+    "tpv": 279029.0
+  },
+  {
+    "data": "2026-04-21",
+    "nivel": "Especialista",
+    "tpv": 119388.0
+  },
+  {
+    "data": "2026-04-21",
+    "nivel": "Top Empreendedor",
+    "tpv": 774808.0
+  },
+  {
+    "data": "2026-04-22",
+    "nivel": "Aprendiz",
+    "tpv": 5305797.0
+  },
+  {
+    "data": "2026-04-22",
+    "nivel": "Empreendedor",
+    "tpv": 260388.0
+  },
+  {
+    "data": "2026-04-22",
+    "nivel": "Especialista",
+    "tpv": 141420.0
+  },
+  {
+    "data": "2026-04-22",
+    "nivel": "Top Empreendedor",
+    "tpv": 836741.0
+  },
+  {
+    "data": "2026-04-23",
+    "nivel": "Aprendiz",
+    "tpv": 5480957.0
+  },
+  {
+    "data": "2026-04-23",
+    "nivel": "Empreendedor",
+    "tpv": 279658.0
+  },
+  {
+    "data": "2026-04-23",
+    "nivel": "Especialista",
+    "tpv": 175548.0
+  },
+  {
+    "data": "2026-04-23",
+    "nivel": "Top Empreendedor",
+    "tpv": 822424.0
+  },
+  {
+    "data": "2026-04-24",
+    "nivel": "Aprendiz",
+    "tpv": 6555062.0
+  },
+  {
+    "data": "2026-04-24",
+    "nivel": "Empreendedor",
+    "tpv": 331851.0
+  },
+  {
+    "data": "2026-04-24",
+    "nivel": "Especialista",
+    "tpv": 189674.0
+  },
+  {
+    "data": "2026-04-24",
+    "nivel": "Top Empreendedor",
+    "tpv": 1114704.0
+  },
+  {
+    "data": "2026-04-25",
+    "nivel": "Aprendiz",
+    "tpv": 7071698.0
+  },
+  {
+    "data": "2026-04-25",
+    "nivel": "Empreendedor",
+    "tpv": 415574.0
+  },
+  {
+    "data": "2026-04-25",
+    "nivel": "Especialista",
+    "tpv": 252583.0
+  },
+  {
+    "data": "2026-04-25",
+    "nivel": "Top Empreendedor",
+    "tpv": 1246664.0
+  },
+  {
+    "data": "2026-04-26",
+    "nivel": "Aprendiz",
+    "tpv": 4883213.0
+  },
+  {
+    "data": "2026-04-26",
+    "nivel": "Empreendedor",
+    "tpv": 313717.0
+  },
+  {
+    "data": "2026-04-26",
+    "nivel": "Especialista",
+    "tpv": 161966.0
+  },
+  {
+    "data": "2026-04-26",
+    "nivel": "Top Empreendedor",
+    "tpv": 955308.0
+  },
+  {
+    "data": "2026-04-27",
+    "nivel": "Aprendiz",
+    "tpv": 5005240.0
+  },
+  {
+    "data": "2026-04-27",
+    "nivel": "Empreendedor",
+    "tpv": 280057.0
+  },
+  {
+    "data": "2026-04-27",
+    "nivel": "Especialista",
+    "tpv": 132689.0
+  },
+  {
+    "data": "2026-04-27",
+    "nivel": "Top Empreendedor",
+    "tpv": 745235.0
+  },
+  {
+    "data": "2026-04-28",
+    "nivel": "Aprendiz",
+    "tpv": 5390372.0
+  },
+  {
+    "data": "2026-04-28",
+    "nivel": "Empreendedor",
+    "tpv": 282531.0
+  },
+  {
+    "data": "2026-04-28",
+    "nivel": "Especialista",
+    "tpv": 127808.0
+  },
+  {
+    "data": "2026-04-28",
+    "nivel": "Top Empreendedor",
+    "tpv": 832814.0
+  },
+  {
+    "data": "2026-04-29",
+    "nivel": "Aprendiz",
+    "tpv": 5465212.0
+  },
+  {
+    "data": "2026-04-29",
+    "nivel": "Empreendedor",
+    "tpv": 292443.0
+  },
+  {
+    "data": "2026-04-29",
+    "nivel": "Especialista",
+    "tpv": 158584.0
+  },
+  {
+    "data": "2026-04-29",
+    "nivel": "Top Empreendedor",
+    "tpv": 855229.0
+  },
+  {
+    "data": "2026-04-30",
+    "nivel": "Aprendiz",
+    "tpv": 7352446.0
+  },
+  {
+    "data": "2026-04-30",
+    "nivel": "Empreendedor",
+    "tpv": 360197.0
+  },
+  {
+    "data": "2026-04-30",
+    "nivel": "Especialista",
+    "tpv": 214901.0
+  },
+  {
+    "data": "2026-04-30",
+    "nivel": "Top Empreendedor",
+    "tpv": 1133815.0
+  },
+  {
+    "data": "2026-05-01",
+    "nivel": "Aprendiz",
+    "tpv": 6589943.0
+  },
+  {
+    "data": "2026-05-01",
+    "nivel": "Empreendedor",
+    "tpv": 390646.0
+  },
+  {
+    "data": "2026-05-01",
+    "nivel": "Especialista",
+    "tpv": 231538.0
+  },
+  {
+    "data": "2026-05-01",
+    "nivel": "Top Empreendedor",
+    "tpv": 1293135.0
+  },
+  {
+    "data": "2026-05-02",
+    "nivel": "Aprendiz",
+    "tpv": 7166826.0
+  },
+  {
+    "data": "2026-05-02",
+    "nivel": "Empreendedor",
+    "tpv": 484807.0
+  },
+  {
+    "data": "2026-05-02",
+    "nivel": "Especialista",
+    "tpv": 253308.0
+  },
+  {
+    "data": "2026-05-02",
+    "nivel": "Top Empreendedor",
+    "tpv": 1405623.0
+  },
+  {
+    "data": "2026-05-03",
+    "nivel": "Aprendiz",
+    "tpv": 5076937.0
+  },
+  {
+    "data": "2026-05-03",
+    "nivel": "Empreendedor",
+    "tpv": 331100.0
+  },
+  {
+    "data": "2026-05-03",
+    "nivel": "Especialista",
+    "tpv": 233633.0
+  },
+  {
+    "data": "2026-05-03",
+    "nivel": "Top Empreendedor",
+    "tpv": 1071353.0
+  },
+  {
+    "data": "2026-05-04",
+    "nivel": "Aprendiz",
+    "tpv": 6024296.0
+  },
+  {
+    "data": "2026-05-04",
+    "nivel": "Empreendedor",
+    "tpv": 346699.0
+  },
+  {
+    "data": "2026-05-04",
+    "nivel": "Especialista",
+    "tpv": 128786.0
+  },
+  {
+    "data": "2026-05-04",
+    "nivel": "Top Empreendedor",
+    "tpv": 871130.0
+  },
+  {
+    "data": "2026-05-05",
+    "nivel": "Aprendiz",
+    "tpv": 6466124.0
+  },
+  {
+    "data": "2026-05-05",
+    "nivel": "Empreendedor",
+    "tpv": 329803.0
+  },
+  {
+    "data": "2026-05-05",
+    "nivel": "Especialista",
+    "tpv": 157980.0
+  },
+  {
+    "data": "2026-05-05",
+    "nivel": "Top Empreendedor",
+    "tpv": 1048738.0
+  },
+  {
+    "data": "2026-05-06",
+    "nivel": "Aprendiz",
+    "tpv": 6564924.0
+  },
+  {
+    "data": "2026-05-06",
+    "nivel": "Empreendedor",
+    "tpv": 367323.0
+  },
+  {
+    "data": "2026-05-06",
+    "nivel": "Especialista",
+    "tpv": 179875.0
+  },
+  {
+    "data": "2026-05-06",
+    "nivel": "Top Empreendedor",
+    "tpv": 1008093.0
+  },
+  {
+    "data": "2026-05-07",
+    "nivel": "Aprendiz",
+    "tpv": 6929929.0
+  },
+  {
+    "data": "2026-05-07",
+    "nivel": "Empreendedor",
+    "tpv": 344221.0
+  },
+  {
+    "data": "2026-05-07",
+    "nivel": "Especialista",
+    "tpv": 164225.0
+  },
+  {
+    "data": "2026-05-07",
+    "nivel": "Top Empreendedor",
+    "tpv": 1067869.0
+  },
+  {
+    "data": "2026-05-08",
+    "nivel": "Aprendiz",
+    "tpv": 8957148.0
+  },
+  {
+    "data": "2026-05-08",
+    "nivel": "Empreendedor",
+    "tpv": 479833.0
+  },
+  {
+    "data": "2026-05-08",
+    "nivel": "Especialista",
+    "tpv": 265266.0
+  },
+  {
+    "data": "2026-05-08",
+    "nivel": "Top Empreendedor",
+    "tpv": 1341279.0
+  },
+  {
+    "data": "2026-05-09",
+    "nivel": "Aprendiz",
+    "tpv": 9126976.0
+  },
+  {
+    "data": "2026-05-09",
+    "nivel": "Empreendedor",
+    "tpv": 564694.0
+  },
+  {
+    "data": "2026-05-09",
+    "nivel": "Especialista",
+    "tpv": 328024.0
+  },
+  {
+    "data": "2026-05-09",
+    "nivel": "Top Empreendedor",
+    "tpv": 1567404.0
+  },
+  {
+    "data": "2026-05-10",
+    "nivel": "Aprendiz",
+    "tpv": 5948927.0
+  },
+  {
+    "data": "2026-05-10",
+    "nivel": "Empreendedor",
+    "tpv": 448873.0
+  },
+  {
+    "data": "2026-05-10",
+    "nivel": "Especialista",
+    "tpv": 243414.0
+  },
+  {
+    "data": "2026-05-10",
+    "nivel": "Top Empreendedor",
+    "tpv": 1111132.0
+  },
+  {
+    "data": "2026-05-11",
+    "nivel": "Aprendiz",
+    "tpv": 6629931.0
+  },
+  {
+    "data": "2026-05-11",
+    "nivel": "Empreendedor",
+    "tpv": 296514.0
+  },
+  {
+    "data": "2026-05-11",
+    "nivel": "Especialista",
+    "tpv": 174162.0
+  },
+  {
+    "data": "2026-05-11",
+    "nivel": "Top Empreendedor",
+    "tpv": 847683.0
+  },
+  {
+    "data": "2026-05-12",
+    "nivel": "Aprendiz",
+    "tpv": 6453160.0
+  },
+  {
+    "data": "2026-05-12",
+    "nivel": "Empreendedor",
+    "tpv": 327733.0
+  },
+  {
+    "data": "2026-05-12",
+    "nivel": "Especialista",
+    "tpv": 141860.0
+  },
+  {
+    "data": "2026-05-12",
+    "nivel": "Top Empreendedor",
+    "tpv": 864088.0
+  },
+  {
+    "data": "2026-05-13",
+    "nivel": "Aprendiz",
+    "tpv": 6539516.0
+  },
+  {
+    "data": "2026-05-13",
+    "nivel": "Empreendedor",
+    "tpv": 327599.0
+  },
+  {
+    "data": "2026-05-13",
+    "nivel": "Especialista",
+    "tpv": 161874.0
+  },
+  {
+    "data": "2026-05-13",
+    "nivel": "Top Empreendedor",
+    "tpv": 913421.0
+  },
+  {
+    "data": "2026-05-14",
+    "nivel": "Aprendiz",
+    "tpv": 6591716.0
+  },
+  {
+    "data": "2026-05-14",
+    "nivel": "Empreendedor",
+    "tpv": 349054.0
+  },
+  {
+    "data": "2026-05-14",
+    "nivel": "Especialista",
+    "tpv": 215100.0
+  },
+  {
+    "data": "2026-05-14",
+    "nivel": "Top Empreendedor",
+    "tpv": 954993.0
+  },
+  {
+    "data": "2026-05-15",
+    "nivel": "Aprendiz",
+    "tpv": 7769155.0
+  },
+  {
+    "data": "2026-05-15",
+    "nivel": "Empreendedor",
+    "tpv": 469152.0
+  },
+  {
+    "data": "2026-05-15",
+    "nivel": "Especialista",
+    "tpv": 207466.0
+  },
+  {
+    "data": "2026-05-15",
+    "nivel": "Top Empreendedor",
+    "tpv": 1187963.0
+  },
+  {
+    "data": "2026-05-16",
+    "nivel": "Aprendiz",
+    "tpv": 8102328.0
+  },
+  {
+    "data": "2026-05-16",
+    "nivel": "Empreendedor",
+    "tpv": 537731.0
+  },
+  {
+    "data": "2026-05-16",
+    "nivel": "Especialista",
+    "tpv": 257814.0
+  },
+  {
+    "data": "2026-05-16",
+    "nivel": "Top Empreendedor",
+    "tpv": 1496074.0
+  },
+  {
+    "data": "2026-05-17",
+    "nivel": "Aprendiz",
+    "tpv": 5943282.0
+  },
+  {
+    "data": "2026-05-17",
+    "nivel": "Empreendedor",
+    "tpv": 409988.0
+  },
+  {
+    "data": "2026-05-17",
+    "nivel": "Especialista",
+    "tpv": 200510.0
+  },
+  {
+    "data": "2026-05-17",
+    "nivel": "Top Empreendedor",
+    "tpv": 1056915.0
+  },
+  {
+    "data": "2026-05-18",
+    "nivel": "Aprendiz",
+    "tpv": 5741333.0
+  },
+  {
+    "data": "2026-05-18",
+    "nivel": "Empreendedor",
+    "tpv": 278539.0
+  },
+  {
+    "data": "2026-05-18",
+    "nivel": "Especialista",
+    "tpv": 158825.0
+  },
+  {
+    "data": "2026-05-18",
+    "nivel": "Top Empreendedor",
+    "tpv": 795457.0
+  },
+  {
+    "data": "2026-05-19",
+    "nivel": "Aprendiz",
+    "tpv": 5992874.0
+  },
+  {
+    "data": "2026-05-19",
+    "nivel": "Empreendedor",
+    "tpv": 312037.0
+  },
+  {
+    "data": "2026-05-19",
+    "nivel": "Especialista",
+    "tpv": 203347.0
+  },
+  {
+    "data": "2026-05-19",
+    "nivel": "Top Empreendedor",
+    "tpv": 826483.0
+  },
+  {
+    "data": "2026-05-20",
+    "nivel": "Aprendiz",
+    "tpv": 6934903.0
+  },
+  {
+    "data": "2026-05-20",
+    "nivel": "Empreendedor",
+    "tpv": 346164.0
+  },
+  {
+    "data": "2026-05-20",
+    "nivel": "Especialista",
+    "tpv": 221459.0
+  },
+  {
+    "data": "2026-05-20",
+    "nivel": "Top Empreendedor",
+    "tpv": 1002742.0
+  },
+  {
+    "data": "2026-05-21",
+    "nivel": "Aprendiz",
+    "tpv": 6611613.0
+  },
+  {
+    "data": "2026-05-21",
+    "nivel": "Empreendedor",
+    "tpv": 426233.0
+  },
+  {
+    "data": "2026-05-21",
+    "nivel": "Especialista",
+    "tpv": 180456.0
+  },
+  {
+    "data": "2026-05-21",
+    "nivel": "Top Empreendedor",
+    "tpv": 993938.0
+  },
+  {
+    "data": "2026-05-22",
+    "nivel": "Aprendiz",
+    "tpv": 7581538.0
+  },
+  {
+    "data": "2026-05-22",
+    "nivel": "Empreendedor",
+    "tpv": 452579.0
+  },
+  {
+    "data": "2026-05-22",
+    "nivel": "Especialista",
+    "tpv": 227210.0
+  },
+  {
+    "data": "2026-05-22",
+    "nivel": "Top Empreendedor",
+    "tpv": 1187694.0
+  },
+  {
+    "data": "2026-05-23",
+    "nivel": "Aprendiz",
+    "tpv": 7814982.0
+  },
+  {
+    "data": "2026-05-23",
+    "nivel": "Empreendedor",
+    "tpv": 522301.0
+  },
+  {
+    "data": "2026-05-23",
+    "nivel": "Especialista",
+    "tpv": 283247.0
+  },
+  {
+    "data": "2026-05-23",
+    "nivel": "Top Empreendedor",
+    "tpv": 1391519.0
+  },
+  {
+    "data": "2026-05-24",
+    "nivel": "Aprendiz",
+    "tpv": 5649501.0
+  },
+  {
+    "data": "2026-05-24",
+    "nivel": "Empreendedor",
+    "tpv": 396741.0
+  },
+  {
+    "data": "2026-05-24",
+    "nivel": "Especialista",
+    "tpv": 249877.0
+  },
+  {
+    "data": "2026-05-24",
+    "nivel": "Top Empreendedor",
+    "tpv": 1087801.0
+  },
+  {
+    "data": "2026-05-25",
+    "nivel": "Aprendiz",
+    "tpv": 5697360.0
+  },
+  {
+    "data": "2026-05-25",
+    "nivel": "Empreendedor",
+    "tpv": 327063.0
+  },
+  {
+    "data": "2026-05-25",
+    "nivel": "Especialista",
+    "tpv": 191184.0
+  },
+  {
+    "data": "2026-05-25",
+    "nivel": "Top Empreendedor",
+    "tpv": 888602.0
+  },
+  {
+    "data": "2026-05-26",
+    "nivel": "Aprendiz",
+    "tpv": 5933447.0
+  },
+  {
+    "data": "2026-05-26",
+    "nivel": "Empreendedor",
+    "tpv": 334978.0
+  },
+  {
+    "data": "2026-05-26",
+    "nivel": "Especialista",
+    "tpv": 182523.0
+  },
+  {
+    "data": "2026-05-26",
+    "nivel": "Top Empreendedor",
+    "tpv": 964702.0
+  },
+  {
+    "data": "2026-05-27",
+    "nivel": "Aprendiz",
+    "tpv": 6081704.0
+  },
+  {
+    "data": "2026-05-27",
+    "nivel": "Empreendedor",
+    "tpv": 367739.0
+  },
+  {
+    "data": "2026-05-27",
+    "nivel": "Especialista",
+    "tpv": 190859.0
+  },
+  {
+    "data": "2026-05-27",
+    "nivel": "Top Empreendedor",
+    "tpv": 947625.0
+  }
+]

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resellers · Performance Abr–Mai/26</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+  <style>
+    :root {
+      --yellow:  #FFE600;
+      --black:   #1A1A1A;
+      --gray-bg: #F4F4F4;
+      --white:   #FFFFFF;
+      --border:  #E0E0E0;
+      --muted:   #888888;
+      --pos:     #1A9E5C;
+      --neg:     #D93636;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Inter',-apple-system,sans-serif; background:var(--gray-bg); color:var(--black); font-size:13px; }
+
+    /* TOPBAR */
+    .topbar { background:var(--black); padding:13px 32px; display:flex; align-items:center; gap:10px; position:sticky; top:0; z-index:100; }
+    .topbar-brand { color:var(--yellow); font-weight:800; font-size:14px; }
+    .topbar-sep { color:#444; }
+    .topbar-title { color:#AAAAAA; font-size:12px; }
+
+    /* HERO */
+    .hero { background:var(--yellow); padding:32px 40px 28px; }
+    .hero-badge { display:inline-block; background:var(--black); color:var(--yellow); font-size:10px; font-weight:700; letter-spacing:1.2px; padding:4px 14px; border-radius:20px; text-transform:uppercase; margin-bottom:14px; }
+    .hero-title { font-size:38px; font-weight:900; color:var(--black); line-height:1.1; margin-bottom:10px; letter-spacing:-1px; }
+    .hero-subtitle { font-size:12px; color:#3A3A3A; }
+
+    /* TABS */
+    .tabs-bar { background:var(--white); border-bottom:2px solid var(--border); padding:0 40px; display:flex; gap:4px; }
+    .tab { padding:13px 18px; font-size:13px; font-weight:500; color:var(--muted); cursor:pointer; border-bottom:3px solid transparent; margin-bottom:-2px; transition:color .15s; user-select:none; }
+    .tab:hover { color:var(--black); }
+    .tab.active { color:var(--black); font-weight:700; border-bottom:3px solid var(--black); }
+    .tab-pane { display:none; padding:32px 40px 56px; }
+    .tab-pane.active { display:block; }
+
+    /* SECTION */
+    .section-title { font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--muted); margin-bottom:12px; margin-top:28px; }
+    .section-title:first-child { margin-top:0; }
+
+    /* TABLES */
+    table { width:100%; border-collapse:collapse; background:var(--white); border-radius:12px; overflow:hidden; box-shadow:0 1px 4px rgba(0,0,0,.06); margin-bottom:24px; }
+    thead th { background:#2D2D2D; color:#fff; padding:10px 14px; font-size:11px; font-weight:700; text-align:right; letter-spacing:.4px; }
+    thead th:first-child { text-align:left; }
+    tbody tr { border-bottom:1px solid #F0F0F0; }
+    tbody tr:last-child { border-bottom:none; }
+    tbody td { padding:9px 14px; text-align:right; }
+    tbody td:first-child { text-align:left; font-weight:500; color:#444; }
+    .metric-label { color:#333; }
+    .col-total { font-weight:700; background:#FAFAFA; }
+    .data-row.bold td { font-weight:700; background:#FFFBDE; }
+    .pos { color:var(--pos); font-weight:700; }
+    .neg { color:var(--neg); font-weight:700; }
+    .bold td { font-weight:800; }
+
+    /* MOM CARDS */
+    .mom-row { display:flex; gap:16px; margin-bottom:32px; }
+    .mom-card { flex:1; background:var(--white); border-radius:12px; padding:20px; box-shadow:0 1px 4px rgba(0,0,0,.06); }
+    .mom-label { display:block; font-size:11px; color:var(--muted); font-weight:600; text-transform:uppercase; letter-spacing:.5px; margin-bottom:8px; }
+    .mom-val { display:block; font-size:28px; font-weight:900; margin-bottom:4px; }
+    .mom-sub { display:block; font-size:11px; color:var(--muted); }
+
+    /* CHART CONTAINERS */
+    .chart-wrap { background:var(--white); border-radius:12px; padding:28px; box-shadow:0 1px 4px rgba(0,0,0,.06); margin-bottom:24px; }
+    .chart-title { font-size:13px; font-weight:700; margin-bottom:20px; }
+    canvas { max-height:360px; }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="topbar-brand">Canal Resellers</span>
+  <span class="topbar-sep">·</span>
+  <span class="topbar-title">Performance por Nível · Abr–Mai/26</span>
+</div>
+
+<div class="hero">
+  <div class="hero-badge">Resellers · 2026</div>
+  <div class="hero-title">Performance por Nível</div>
+  <div class="hero-subtitle">Comparativo Abril × Maio · Atualizado em 28/05/2026</div>
+</div>
+
+<div class="tabs-bar">
+  <div class="tab active" onclick="showTab('comparativo',this)">Comparativo</div>
+  <div class="tab" onclick="showTab('tpv-nivel',this)">TPV por Nível</div>
+  <div class="tab" onclick="showTab('tpv-diario',this)">TPV Diário</div>
+  <div class="tab" onclick="showTab('pedidos',this)">Pedidos &amp; Mix</div>
+</div>
+
+<!-- ── TAB 1: COMPARATIVO ─────────────────────────────────────────────────── -->
+<div class="tab-pane active" id="pane-comparativo">
+
+  <div class="section-title">Variação MoM — Totais</div>
+  <div class="mom-row">
+    <div class='mom-card'><span class='mom-label'>TPV Total</span><span class='mom-val pos'>+6.1%</span><span class='mom-sub'>Abr → Mai</span></div>
+<div class='mom-card'><span class='mom-label'>Pedidos</span><span class='mom-val neg'>-1.8%</span><span class='mom-sub'>Abr → Mai</span></div>
+<div class='mom-card'><span class='mom-label'>Devices ativados</span><span class='mom-val neg'>-28.8%</span><span class='mom-sub'>Abr → Mai</span></div>
+
+  </div>
+
+  <div class="section-title">Abril/26 — por nível</div>
+  <table>
+    <thead>
+      <tr>
+        <th>Métrica</th>
+        <th>Aprendiz</th><th>Especialista</th><th>Empreendedor</th><th>Top Empr.</th>
+        <th class="col-total">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class='data-row'><td class='metric-label'>Resellers</td><td>822</td><td>82</td><td>45</td><td>41</td><td class='col-total'>990</td></tr>
+<tr class='data-row'><td class='metric-label'>Pedidos</td><td>973</td><td>210</td><td>234</td><td>729</td><td class='col-total'>2.146</td></tr>
+<tr class='data-row'><td class='metric-label'>Devices ativados</td><td>434</td><td>11</td><td>22</td><td>65</td><td class='col-total'>532</td></tr>
+<tr class='data-row'><td class='metric-label'>TPV M0</td><td>R$ 507K</td><td>R$ 803K</td><td>R$ 1.1M</td><td>R$ 3.4M</td><td class='col-total'>R$ 5.8M</td></tr>
+<tr class='data-row'><td class='metric-label'>TPV M1</td><td>R$ 967K</td><td>R$ 834K</td><td>R$ 1.9M</td><td>R$ 7.7M</td><td class='col-total'>R$ 11.3M</td></tr>
+<tr class='data-row bold'><td class='metric-label'>TPV Total</td><td>R$ 171.8M</td><td>R$ 4.8M</td><td>R$ 9.2M</td><td>R$ 27.6M</td><td class='col-total'>R$ 213.3M</td></tr>
+<tr class='data-row'><td class='metric-label'>TPV M0 / device</td><td>R$ 0</td><td>R$ 0</td><td>R$ 0</td><td>R$ 0</td><td class='col-total'>R$ 0</td></tr>
+<tr class='data-row'><td class='metric-label'>TPV M1 / device</td><td>R$ 0</td><td>R$ 0</td><td>R$ 0</td><td>R$ 0</td><td class='col-total'>R$ 0</td></tr>
+    </tbody>
+  </table>
+
+  <div class="section-title">Maio/26 — por nível (MTD até 28/05/2026)</div>
+  <table>
+    <thead>
+      <tr>
+        <th>Métrica</th>
+        <th>Aprendiz</th><th>Especialista</th><th>Empreendedor</th><th>Top Empr.</th>
+        <th class="col-total">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class='data-row'><td class='metric-label'>Resellers</td><td>1.071</td><td>63</td><td>44</td><td>36</td><td class='col-total'>1.214</td></tr>
+<tr class='data-row'><td class='metric-label'>Pedidos</td><td>1.427</td><td>161</td><td>254</td><td>266</td><td class='col-total'>2.108</td></tr>
+<tr class='data-row'><td class='metric-label'>Devices ativados</td><td>316</td><td>14</td><td>16</td><td>33</td><td class='col-total'>379</td></tr>
+<tr class='data-row'><td class='metric-label'>TPV M0</td><td>R$ 539K</td><td>R$ 728K</td><td>R$ 1.4M</td><td>R$ 2.4M</td><td class='col-total'>R$ 5.0M</td></tr>
+<tr class='data-row'><td class='metric-label'>TPV M1</td><td>R$ 663K</td><td>R$ 1.1M</td><td>R$ 1.8M</td><td>R$ 5.2M</td><td class='col-total'>R$ 8.7M</td></tr>
+<tr class='data-row bold'><td class='metric-label'>TPV Total</td><td>R$ 180.9M</td><td>R$ 5.6M</td><td>R$ 10.6M</td><td>R$ 29.2M</td><td class='col-total'>R$ 226.3M</td></tr>
+<tr class='data-row'><td class='metric-label'>TPV M0 / device</td><td>R$ 0</td><td>R$ 0</td><td>R$ 0</td><td>R$ 0</td><td class='col-total'>R$ 0</td></tr>
+<tr class='data-row'><td class='metric-label'>TPV M1 / device</td><td>R$ 0</td><td>R$ 0</td><td>R$ 0</td><td>R$ 0</td><td class='col-total'>R$ 0</td></tr>
+    </tbody>
+  </table>
+
+  <div style="padding:0 0 8px; text-align:left;">
+    <span style="font-size:11px; color:#AAAAAA;">
+      Fontes: BT_PRODUCT_ORDERS (pedidos) · BT_MP_IC_DEVICES_RSL (ativações) · BT_MP_IC_CUBO_RSL (TPV) · Mai/26 MTD até 28/05/2026
+    </span>
+  </div>
+</div>
+
+<!-- ── TAB 2: TPV POR NÍVEL ──────────────────────────────────────────────── -->
+<div class="tab-pane" id="pane-tpv-nivel">
+  <div class="chart-wrap">
+    <div class="chart-title">TPV Total por Nível — Abr × Mai (R$ M)</div>
+    <canvas id="chartBar"></canvas>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nível</th>
+        <th>TPV Abril</th><th>TPV Maio</th><th>MoM %</th>
+        <th>M0 Abril</th><th>M0 Maio</th>
+        <th>M1 Abril</th><th>M1 Maio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class='metric-label'>Aprendiz</td><td>R$ 171.8M</td><td>R$ 180.9M</td><td class='pos'>+5.3%</td><td>R$ 507K</td><td>R$ 539K</td><td>R$ 967K</td><td>R$ 663K</td></tr><tr><td class='metric-label'>Especialista</td><td>R$ 4.8M</td><td>R$ 5.6M</td><td class='pos'>+17.5%</td><td>R$ 803K</td><td>R$ 728K</td><td>R$ 834K</td><td>R$ 1.1M</td></tr><tr><td class='metric-label'>Empreendedor</td><td>R$ 9.2M</td><td>R$ 10.6M</td><td class='pos'>+14.8%</td><td>R$ 1.1M</td><td>R$ 1.4M</td><td>R$ 1.9M</td><td>R$ 1.8M</td></tr><tr><td class='metric-label'>Top Empreendedor</td><td>R$ 27.6M</td><td>R$ 29.2M</td><td class='pos'>+5.9%</td><td>R$ 3.4M</td><td>R$ 2.4M</td><td>R$ 7.7M</td><td>R$ 5.2M</td></tr>
+      <tr class="bold">
+        <td class="metric-label">Total</td>
+        <td>R$ 213.3M</td>
+        <td>R$ 226.3M</td>
+        <td class="pos">+6.1%</td>
+        <td>R$ 5.8M</td>
+        <td>R$ 5.0M</td>
+        <td>R$ 11.3M</td>
+        <td>R$ 8.7M</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ── TAB 3: TPV DIÁRIO ─────────────────────────────────────────────────── -->
+<div class="tab-pane" id="pane-tpv-diario">
+  <div class="chart-wrap">
+    <div class="chart-title">TPV Diário por Nível — Abr–Mai/26</div>
+    <canvas id="chartLine"></canvas>
+  </div>
+</div>
+
+<!-- ── TAB 4: PEDIDOS & MIX ──────────────────────────────────────────────── -->
+<div class="tab-pane" id="pane-pedidos">
+  <table>
+    <thead>
+      <tr>
+        <th>Nível</th>
+        <th>Pedidos Abr</th><th>Pedidos Mai</th><th>MoM %</th>
+        <th>Pro% Abr</th><th>Smart% Abr</th>
+        <th>Pro% Mai</th><th>Smart% Mai</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class='metric-label'>Aprendiz</td><td>973</td><td>1.427</td><td class='pos'>+46.7%</td><td>158%</td><td>21%</td><td>156%</td><td>16%</td></tr>
+<tr><td class='metric-label'>Especialista</td><td>210</td><td>161</td><td class='neg'>-23.3%</td><td>261%</td><td>55%</td><td>303%</td><td>40%</td></tr>
+<tr><td class='metric-label'>Empreendedor</td><td>234</td><td>254</td><td class='pos'>+8.5%</td><td>278%</td><td>60%</td><td>233%</td><td>62%</td></tr>
+<tr><td class='metric-label'>Top Empreendedor</td><td>729</td><td>266</td><td class='neg'>-63.5%</td><td>266%</td><td>72%</td><td>330%</td><td>79%</td></tr>
+<tr class='bold'><td class='metric-label'>Total</td><td>2.146</td><td>2.108</td><td class='neg'>-1.8%</td><td colspan='4'></td></tr>
+    </tbody>
+  </table>
+
+  <div style="padding:0 0 8px;">
+    <span style="font-size:11px; color:#AAAAAA;">
+      Fonte: BT_PRODUCT_ORDERS · Pedidos = ordens únicas · Mai/26 MTD até 28/05/2026
+    </span>
+  </div>
+</div>
+
+<script>
+// ── Data ──────────────────────────────────────────────────────────────────────
+const BAR_LABELS = ["Aprendiz", "Especialista", "Empreend.", "Top Empr."];
+const BAR_ABR    = [171.76, 4.8, 9.2, 27.56];
+const BAR_MAI    = [180.92, 5.63, 10.57, 29.19];
+
+const LINE_LABELS = ["01/04", "02/04", "03/04", "04/04", "05/04", "06/04", "07/04", "08/04", "09/04", "10/04", "11/04", "12/04", "13/04", "14/04", "15/04", "16/04", "17/04", "18/04", "19/04", "20/04", "21/04", "22/04", "23/04", "24/04", "25/04", "26/04", "27/04", "28/04", "29/04", "30/04", "01/05", "02/05", "03/05", "04/05", "05/05", "06/05", "07/05", "08/05", "09/05", "10/05", "11/05", "12/05", "13/05", "14/05", "15/05", "16/05", "17/05", "18/05", "19/05", "20/05", "21/05", "22/05", "23/05", "24/05", "25/05", "26/05", "27/05"];
+const LINE_APR    = [5394880, 6519311, 4466641, 5665544, 3984297, 5056177, 5704044, 5537311, 5894466, 7175545, 7058649, 4844359, 5059803, 5375071, 5950404, 6031072, 6765151, 7032725, 5105224, 5953695, 4674850, 5305797, 5480957, 6555062, 7071698, 4883213, 5005240, 5390372, 5465212, 7352446, 6589943, 7166826, 5076937, 6024296, 6466124, 6564924, 6929929, 8957148, 9126976, 5948927, 6629931, 6453160, 6539516, 6591716, 7769155, 8102328, 5943282, 5741333, 5992874, 6934903, 6611613, 7581538, 7814982, 5649501, 5697360, 5933447, 6081704];
+const LINE_ESP    = [113636, 143825, 106895, 136580, 101028, 107160, 111732, 161771, 161129, 182628, 209918, 164263, 157995, 125725, 155760, 169405, 217643, 248961, 178691, 167297, 119388, 141420, 175548, 189674, 252583, 161966, 132689, 127808, 158584, 214901, 231538, 253308, 233633, 128786, 157980, 179875, 164225, 265266, 328024, 243414, 174162, 141860, 161874, 215100, 207466, 257814, 200510, 158825, 203347, 221459, 180456, 227210, 283247, 249877, 191184, 182523, 190859];
+const LINE_EMP    = [265268, 349805, 245426, 370214, 261759, 263841, 258655, 266477, 282498, 378927, 414205, 305565, 230892, 277241, 263412, 267926, 336521, 386203, 348217, 336085, 279029, 260388, 279658, 331851, 415574, 313717, 280057, 282531, 292443, 360197, 390646, 484807, 331100, 346699, 329803, 367323, 344221, 479833, 564694, 448873, 296514, 327733, 327599, 349054, 469152, 537731, 409988, 278539, 312037, 346164, 426233, 452579, 522301, 396741, 327063, 334978, 367739];
+const LINE_TOP    = [827927, 1054756, 814665, 1080605, 736210, 670477, 820220, 808790, 840924, 1021703, 1206819, 913812, 729520, 793510, 860753, 848477, 1032819, 1247527, 995084, 942145, 774808, 836741, 822424, 1114704, 1246664, 955308, 745235, 832814, 855229, 1133815, 1293135, 1405623, 1071353, 871130, 1048738, 1008093, 1067869, 1341279, 1567404, 1111132, 847683, 864088, 913421, 954993, 1187963, 1496074, 1056915, 795457, 826483, 1002742, 993938, 1187694, 1391519, 1087801, 888602, 964702, 947625];
+const LINE_TOTAL  = [6601711, 8067697, 5633627, 7252943, 5083294, 6097655, 6894651, 6774349, 7179017, 8758803, 8889591, 6227999, 6178210, 6571547, 7230329, 7316880, 8352134, 8915416, 6627216, 7399222, 5848075, 6544346, 6758587, 8191291, 8986519, 6314204, 6163221, 6633525, 6771468, 9061359, 8505262, 9310564, 6713023, 7370911, 8002645, 8120215, 8506244, 11043526, 11587098, 7752346, 7948290, 7786841, 7942410, 8110863, 9633736, 10393947, 7610695, 6974154, 7334741, 8505268, 8212240, 9449021, 10012049, 7383920, 7104209, 7415650, 7587927];
+
+// ── Tab switching ─────────────────────────────────────────────────────────────
+function showTab(id, el) {
+  document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('pane-' + id).classList.add('active');
+  el.classList.add('active');
+  if (id === 'tpv-nivel'  && !window._barDone)  { buildBar();  window._barDone  = true; }
+  if (id === 'tpv-diario' && !window._lineDone) { buildLine(); window._lineDone = true; }
+}
+
+// ── Bar chart ─────────────────────────────────────────────────────────────────
+function buildBar() {
+  Chart.register(ChartDataLabels);
+  new Chart(document.getElementById('chartBar'), {
+    type: 'bar',
+    plugins: [ChartDataLabels],
+    data: {
+      labels: BAR_LABELS,
+      datasets: [
+        {
+          label: 'Abril/26',
+          data: BAR_ABR,
+          backgroundColor: '#FFE600',
+          borderRadius: 6,
+        },
+        {
+          label: 'Maio/26',
+          data: BAR_MAI,
+          backgroundColor: '#1A1A1A',
+          borderRadius: 6,
+        },
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { position: 'top', labels: { font: { family: 'Inter', size: 12 } } },
+        datalabels: {
+          anchor: 'end', align: 'top',
+          formatter: v => v > 0 ? 'R$ ' + v.toFixed(1) + 'M' : '',
+          font: { size: 10, weight: '700', family: 'Inter' },
+          color: '#555',
+        }
+      },
+      scales: {
+        y: {
+          grid: { color: '#F0F0F0' },
+          ticks: { callback: v => 'R$ ' + v + 'M', font: { family: 'Inter', size: 11 } },
+        },
+        x: { ticks: { font: { family: 'Inter', size: 12 } } }
+      },
+      layout: { padding: { top: 24 } }
+    }
+  });
+}
+
+// ── Line chart ────────────────────────────────────────────────────────────────
+function buildLine() {
+  const datasets = [
+    { label: 'Total',           data: LINE_TOTAL,  borderColor: '#1A1A1A', borderWidth: 2.5, pointRadius: 0, tension: 0.3 },
+    { label: 'Aprendiz',        data: LINE_APR,    borderColor: '#FFE600', borderWidth: 2,   pointRadius: 0, tension: 0.3 },
+    { label: 'Especialista',    data: LINE_ESP,    borderColor: '#888888', borderWidth: 1.5, pointRadius: 0, tension: 0.3 },
+    { label: 'Empreendedor',    data: LINE_EMP,    borderColor: '#4A90D9', borderWidth: 1.5, pointRadius: 0, tension: 0.3 },
+    { label: 'Top Empreendedor',data: LINE_TOP,    borderColor: '#D93636', borderWidth: 1.5, pointRadius: 0, tension: 0.3 },
+  ];
+  // Separator: vertical line at Abr -> Mai transition
+  const maiIdx = LINE_LABELS.findIndex(l => l === '01/05');
+  const annotationCfg = maiIdx >= 0 ? { annotations: { line1: {
+    type: 'line', xMin: maiIdx, xMax: maiIdx,
+    borderColor: '#AAAAAA', borderWidth: 1.5, borderDash: [4, 4],
+    label: { content: 'Mai/26', display: true, position: 'start', font: { size: 10 } }
+  }}} : {};
+
+  new Chart(document.getElementById('chartLine'), {
+    type: 'line',
+    data: { labels: LINE_LABELS, datasets },
+    options: {
+      responsive: true,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { position: 'top', labels: { font: { family: 'Inter', size: 12 } } },
+        datalabels: { display: false },
+        annotation: annotationCfg,
+      },
+      scales: {
+        y: {
+          grid: { color: '#F0F0F0' },
+          ticks: {
+            callback: v => v >= 1e6 ? 'R$' + (v/1e6).toFixed(1) + 'M' : v >= 1e3 ? 'R$' + (v/1e3).toFixed(0) + 'K' : v,
+            font: { family: 'Inter', size: 11 }
+          }
+        },
+        x: {
+          ticks: {
+            maxTicksLimit: 20,
+            font: { family: 'Inter', size: 10 }
+          }
+        }
+      }
+    }
+  });
+}
+</script>
+</body>
+</html>

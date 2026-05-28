@@ -1,0 +1,98 @@
+[
+  {
+    "mes": "2026-04",
+    "nivel": "Aprendiz",
+    "resellers": 822,
+    "pedidos": 973,
+    "pedidos_pro": 1537,
+    "pedidos_smart": 207,
+    "ativos": 434,
+    "tpv_m0": 507437.09,
+    "tpv_m1": 966666.58,
+    "tpv_total": 171759216.59
+  },
+  {
+    "mes": "2026-04",
+    "nivel": "Empreendedor",
+    "resellers": 45,
+    "pedidos": 234,
+    "pedidos_pro": 651,
+    "pedidos_smart": 140,
+    "ativos": 22,
+    "tpv_m0": 1090142.7,
+    "tpv_m1": 1854849.21,
+    "tpv_total": 9204579.62
+  },
+  {
+    "mes": "2026-04",
+    "nivel": "Especialista",
+    "resellers": 82,
+    "pedidos": 210,
+    "pedidos_pro": 549,
+    "pedidos_smart": 115,
+    "ativos": 11,
+    "tpv_m0": 803494.29,
+    "tpv_m1": 834308.74,
+    "tpv_total": 4796605.09
+  },
+  {
+    "mes": "2026-04",
+    "nivel": "Top Empreendedor",
+    "resellers": 41,
+    "pedidos": 729,
+    "pedidos_pro": 1940,
+    "pedidos_smart": 525,
+    "ativos": 65,
+    "tpv_m0": 3438356.7,
+    "tpv_m1": 7658522.64,
+    "tpv_total": 27564486.15
+  },
+  {
+    "mes": "2026-05",
+    "nivel": "Aprendiz",
+    "resellers": 1071,
+    "pedidos": 1427,
+    "pedidos_pro": 2222,
+    "pedidos_smart": 224,
+    "ativos": 316,
+    "tpv_m0": 538902.02,
+    "tpv_m1": 663282.95,
+    "tpv_total": 180920372.58
+  },
+  {
+    "mes": "2026-05",
+    "nivel": "Empreendedor",
+    "resellers": 44,
+    "pedidos": 254,
+    "pedidos_pro": 593,
+    "pedidos_smart": 158,
+    "ativos": 16,
+    "tpv_m0": 1429377.07,
+    "tpv_m1": 1750181.37,
+    "tpv_total": 10570145.74
+  },
+  {
+    "mes": "2026-05",
+    "nivel": "Especialista",
+    "resellers": 63,
+    "pedidos": 161,
+    "pedidos_pro": 488,
+    "pedidos_smart": 64,
+    "ativos": 14,
+    "tpv_m0": 728051.46,
+    "tpv_m1": 1128019.51,
+    "tpv_total": 5633823.98
+  },
+  {
+    "mes": "2026-05",
+    "nivel": "Top Empreendedor",
+    "resellers": 36,
+    "pedidos": 266,
+    "pedidos_pro": 879,
+    "pedidos_smart": 211,
+    "ativos": 33,
+    "tpv_m0": 2351159.7,
+    "tpv_m1": 5183997.13,
+    "tpv_total": 29193454.92
+  }
+]
