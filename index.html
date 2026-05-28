@@ -107,10 +107,6 @@
 </div>
 <div class="tabs-bar">
   <div class="tab active" onclick="showTab('devices',this)">Devices Sold</div>
-  <div class="tab" onclick="showTab('comparativo',this)">Comparativo</div>
-  <div class="tab" onclick="showTab('tpv-nivel',this)">TPV por Nível</div>
-  <div class="tab" onclick="showTab('tpv-diario',this)">TPV Diário</div>
-  <div class="tab" onclick="showTab('pedidos',this)">Pedidos &amp; Mix</div>
 </div>
 
 <!-- ── TAB 1: DEVICES SOLD (dark) ─────────────────────────────────────────── -->
@@ -165,89 +161,6 @@
 </div>
 </div>
 
-<!-- ── TAB 2: COMPARATIVO ─────────────────────────────────────────────────── -->
-<div class="tab-pane" id="pane-comparativo">
-<div class="light-pane">
-  <div class="section-title">Variação MoM — Totais</div>
-  <div class="mom-row"><div class='mom-card'><span class='mom-label'>TPV Total</span><span class='mom-val pos'>+6.1%</span><span class='mom-sub'>Abr → Mai</span></div>
-<div class='mom-card'><span class='mom-label'>Pedidos</span><span class='mom-val neg'>-1.8%</span><span class='mom-sub'>Abr → Mai</span></div>
-<div class='mom-card'><span class='mom-label'>Devices ativados</span><span class='mom-val neg'>-28.8%</span><span class='mom-sub'>Abr → Mai</span></div>
-</div>
-  <div class="section-title">Abril/26 — por nível</div>
-  <table>
-    <thead><tr><th>Métrica</th><th>Aprendiz</th><th>Especialista</th><th>Empreendedor</th><th>Top Empr.</th><th class="col-total">Total</th></tr></thead>
-    <tbody><tr class='data-row'><td class='metric-label'>Resellers</td><td>822</td><td>82</td><td>45</td><td>41</td><td class='col-total'>990</td></tr>
-<tr class='data-row'><td class='metric-label'>Pedidos</td><td>973</td><td>210</td><td>234</td><td>729</td><td class='col-total'>2.146</td></tr>
-<tr class='data-row'><td class='metric-label'>Devices ativados</td><td>434</td><td>11</td><td>22</td><td>65</td><td class='col-total'>532</td></tr>
-<tr class='data-row'><td class='metric-label'>TPV M0</td><td>R$ 507K</td><td>R$ 803K</td><td>R$ 1.1M</td><td>R$ 3.4M</td><td class='col-total'>R$ 5.8M</td></tr>
-<tr class='data-row'><td class='metric-label'>TPV M1</td><td>R$ 967K</td><td>R$ 834K</td><td>R$ 1.9M</td><td>R$ 7.7M</td><td class='col-total'>R$ 11.3M</td></tr>
-<tr class='data-row bold'><td class='metric-label'>TPV Total</td><td>R$ 171.8M</td><td>R$ 4.8M</td><td>R$ 9.2M</td><td>R$ 27.6M</td><td class='col-total'>R$ 213.3M</td></tr>
-<tr class='data-row'><td class='metric-label'>TPV M0 / device</td><td>R$ 1K</td><td>R$ 73K</td><td>R$ 50K</td><td>R$ 53K</td><td class='col-total'>R$ 11K</td></tr>
-<tr class='data-row'><td class='metric-label'>TPV M1 / device</td><td>R$ 2K</td><td>R$ 76K</td><td>R$ 84K</td><td>R$ 118K</td><td class='col-total'>R$ 21K</td></tr></tbody>
-  </table>
-  <div class="section-title">Maio/26 — por nível (MTD até 28/05/2026)</div>
-  <table>
-    <thead><tr><th>Métrica</th><th>Aprendiz</th><th>Especialista</th><th>Empreendedor</th><th>Top Empr.</th><th class="col-total">Total</th></tr></thead>
-    <tbody><tr class='data-row'><td class='metric-label'>Resellers</td><td>1.071</td><td>63</td><td>44</td><td>36</td><td class='col-total'>1.214</td></tr>
-<tr class='data-row'><td class='metric-label'>Pedidos</td><td>1.427</td><td>161</td><td>254</td><td>266</td><td class='col-total'>2.108</td></tr>
-<tr class='data-row'><td class='metric-label'>Devices ativados</td><td>316</td><td>14</td><td>16</td><td>33</td><td class='col-total'>379</td></tr>
-<tr class='data-row'><td class='metric-label'>TPV M0</td><td>R$ 539K</td><td>R$ 728K</td><td>R$ 1.4M</td><td>R$ 2.4M</td><td class='col-total'>R$ 5.0M</td></tr>
-<tr class='data-row'><td class='metric-label'>TPV M1</td><td>R$ 663K</td><td>R$ 1.1M</td><td>R$ 1.8M</td><td>R$ 5.2M</td><td class='col-total'>R$ 8.7M</td></tr>
-<tr class='data-row bold'><td class='metric-label'>TPV Total</td><td>R$ 180.9M</td><td>R$ 5.6M</td><td>R$ 10.6M</td><td>R$ 29.2M</td><td class='col-total'>R$ 226.3M</td></tr>
-<tr class='data-row'><td class='metric-label'>TPV M0 / device</td><td>R$ 2K</td><td>R$ 52K</td><td>R$ 89K</td><td>R$ 71K</td><td class='col-total'>R$ 13K</td></tr>
-<tr class='data-row'><td class='metric-label'>TPV M1 / device</td><td>R$ 2K</td><td>R$ 81K</td><td>R$ 109K</td><td>R$ 157K</td><td class='col-total'>R$ 23K</td></tr></tbody>
-  </table>
-  <span style="font-size:11px;color:#AAA">Fontes: BT_PRODUCT_ORDERS · BT_MP_IC_DEVICES_RSL · BT_MP_IC_CUBO_RSL · Mai/26 MTD até 28/05/2026</span>
-</div>
-</div>
-
-<!-- ── TAB 3: TPV POR NÍVEL ──────────────────────────────────────────────── -->
-<div class="tab-pane" id="pane-tpv-nivel">
-<div class="light-pane">
-  <div class="chart-wrap">
-    <div class="chart-title">TPV Total por Nível — Abr × Mai (R$ M)</div>
-    <canvas id="chartBar"></canvas>
-  </div>
-  <table>
-    <thead><tr><th>Nível</th><th>TPV Abril</th><th>TPV Maio</th><th>MoM %</th><th>M0 Abr</th><th>M0 Mai</th><th>M1 Abr</th><th>M1 Mai</th></tr></thead>
-    <tbody>
-      <tr><td class='metric-label'>Aprendiz</td><td>R$ 171.8M</td><td>R$ 180.9M</td><td class='pos'>+5.3%</td><td>R$ 507K</td><td>R$ 539K</td><td>R$ 967K</td><td>R$ 663K</td></tr><tr><td class='metric-label'>Especialista</td><td>R$ 4.8M</td><td>R$ 5.6M</td><td class='pos'>+17.5%</td><td>R$ 803K</td><td>R$ 728K</td><td>R$ 834K</td><td>R$ 1.1M</td></tr><tr><td class='metric-label'>Empreendedor</td><td>R$ 9.2M</td><td>R$ 10.6M</td><td class='pos'>+14.8%</td><td>R$ 1.1M</td><td>R$ 1.4M</td><td>R$ 1.9M</td><td>R$ 1.8M</td></tr><tr><td class='metric-label'>Top Empreendedor</td><td>R$ 27.6M</td><td>R$ 29.2M</td><td class='pos'>+5.9%</td><td>R$ 3.4M</td><td>R$ 2.4M</td><td>R$ 7.7M</td><td>R$ 5.2M</td></tr>
-      <tr class="bold">
-        <td class="metric-label">Total</td>
-        <td>R$ 213.3M</td><td>R$ 226.3M</td>
-        <td class="pos">+6.1%</td>
-        <td>R$ 5.8M</td><td>R$ 5.0M</td>
-        <td>R$ 11.3M</td><td>R$ 8.7M</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-</div>
-
-<!-- ── TAB 4: TPV DIÁRIO ─────────────────────────────────────────────────── -->
-<div class="tab-pane" id="pane-tpv-diario">
-<div class="light-pane">
-  <div class="chart-wrap">
-    <div class="chart-title">TPV Diário por Nível — Abr–Mai/26</div>
-    <canvas id="chartLine"></canvas>
-  </div>
-</div>
-</div>
-
-<!-- ── TAB 5: PEDIDOS & MIX ──────────────────────────────────────────────── -->
-<div class="tab-pane" id="pane-pedidos">
-<div class="light-pane">
-  <table>
-    <thead><tr><th>Nível</th><th>Pedidos Abr</th><th>Pedidos Mai</th><th>MoM %</th><th>Pro% Abr</th><th>Smart% Abr</th><th>Pro% Mai</th><th>Smart% Mai</th></tr></thead>
-    <tbody><tr><td class='metric-label'>Aprendiz</td><td>973</td><td>1.427</td><td class='pos'>+46.7%</td><td>158%</td><td>21%</td><td>156%</td><td>16%</td></tr>
-<tr><td class='metric-label'>Especialista</td><td>210</td><td>161</td><td class='neg'>-23.3%</td><td>261%</td><td>55%</td><td>303%</td><td>40%</td></tr>
-<tr><td class='metric-label'>Empreendedor</td><td>234</td><td>254</td><td class='pos'>+8.5%</td><td>278%</td><td>60%</td><td>233%</td><td>62%</td></tr>
-<tr><td class='metric-label'>Top Empreendedor</td><td>729</td><td>266</td><td class='neg'>-63.5%</td><td>266%</td><td>72%</td><td>330%</td><td>79%</td></tr>
-<tr class='bold'><td class='metric-label'>Total</td><td>2.146</td><td>2.108</td><td class='neg'>-1.8%</td><td colspan='4'></td></tr></tbody>
-  </table>
-  <span style="font-size:11px;color:#AAA">Fonte: BT_PRODUCT_ORDERS · Mai/26 MTD até 28/05/2026</span>
-</div>
-</div>
 
 <script>
 // ── Data ──────────────────────────────────────────────────────────────────────
