@@ -158,12 +158,23 @@
     </tbody>
   </table>
   <div class="dk-footnote">* semana em andamento (dados até D-1)</div>
+
+  <div class="dk-chart-wrap" style="margin-top:28px">
+    <div style="font-size:12px;font-weight:700;color:#AAA;margin-bottom:16px;text-transform:uppercase;letter-spacing:.5px">
+      Mix de Dispositivos por Mês &nbsp;·&nbsp; Pro 3 vs Smart 2
+    </div>
+    <canvas id="chartMix" style="max-height:220px"></canvas>
+  </div>
 </div>
 </div>
 
 
 <script>
 // ── Data ──────────────────────────────────────────────────────────────────────
+const MIX_LABELS = ["Abril/26", "Maio/26"];
+const MIX_PRO    = [4677, 4182];
+const MIX_SMART  = [987, 657];
+
 const DEV_LABELS = ["01/05", "02/05", "03/05", "04/05", "05/05", "06/05", "07/05", "08/05", "09/05", "10/05", "11/05", "12/05", "13/05", "14/05", "15/05", "16/05", "17/05", "18/05", "19/05", "20/05", "21/05", "22/05", "23/05", "24/05", "25/05", "26/05", "27/05"];
 const DEV_APR    = [32, 24, 28, 86, 94, 134, 127, 123, 56, 52, 145, 123, 82, 111, 73, 44, 43, 120, 122, 99, 127, 125, 58, 50, 118, 151, 99];
 const DEV_ESP    = [6, 20, 0, 26, 26, 15, 71, 8, 70, 34, 13, 20, 19, 9, 14, 18, 17, 8, 12, 12, 26, 26, 0, 12, 12, 34, 24];
@@ -311,8 +322,57 @@ function buildLine() {
   });
 }
 
-// Inicializa gráfico da aba ativa (Devices)
-window.addEventListener('DOMContentLoaded', () => { buildDevBar(); window._devDone=true; });
+// ── Mix Pro 3 vs Smart 2 ─────────────────────────────────────────────────────
+function buildMixChart() {
+  new Chart(document.getElementById('chartMix'), {
+    type: 'bar',
+    plugins: [ChartDataLabels],
+    data: {
+      labels: MIX_LABELS,
+      datasets: [
+        {
+          label: 'Point Pro 3',
+          data: MIX_PRO,
+          backgroundColor: '#FFE600',
+          borderRadius: 6,
+          datalabels: {
+            anchor: 'end', align: 'top',
+            color: '#AAA', font: { size: 11, weight: '700', family: 'Inter' },
+            formatter: v => v.toLocaleString('pt-BR')
+          }
+        },
+        {
+          label: 'Point Smart 2',
+          data: MIX_SMART,
+          backgroundColor: '#CCCCCC',
+          borderRadius: 6,
+          datalabels: {
+            anchor: 'end', align: 'top',
+            color: '#AAA', font: { size: 11, weight: '700', family: 'Inter' },
+            formatter: v => v.toLocaleString('pt-BR')
+          }
+        },
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { position: 'top', labels: { color: '#AAA', font: { family: 'Inter', size: 12 }, boxWidth: 12 } },
+      },
+      scales: {
+        x: { grid: { color: '#222' }, ticks: { color: '#888', font: { family: 'Inter', size: 12 } } },
+        y: { grid: { color: '#222' }, ticks: { color: '#888', font: { family: 'Inter', size: 11 } }, beginAtZero: true },
+      },
+      layout: { padding: { top: 28 } }
+    }
+  });
+}
+
+// Inicializa gráficos da aba ativa (Devices)
+window.addEventListener('DOMContentLoaded', () => {
+  buildDevBar();  window._devDone  = true;
+  buildMixChart(); window._mixDone = true;
+});
 </script>
 </body>
 </html>
