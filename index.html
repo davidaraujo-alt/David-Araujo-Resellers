@@ -300,6 +300,40 @@ function buildDevBar() {
        }
     },
   ];
+
+  // Anotações de eventos
+  const EVENTS = [
+    ['04/05', ['LIVE LANÇAMENTO'],                    0.08],
+    ['05/05', ['NOVOS INCENTIVOS', 'PREÇO ESPECIAL'], 0.28],
+    ['08/05', ['PREÇO ESPECIAL'],                     0.08],
+    ['18/05', ['PREÇO ESPECIAL', 'CAMPANHA EMP&TOP'], 0.08],
+    ['19/05', ['NOVOS INCENTIVOS'],                   0.28],
+    ['26/05', ['PREÇO ESPECIAL'],                     0.08],
+  ];
+  const evAnno = {};
+  EVENTS.forEach(([dt, txt, pos], i) => {
+    const idx = DEV_LABELS.findIndex(l => l === dt);
+    if (idx < 0) return;
+    evAnno['ev'+i] = {
+      type: 'line',
+      xMin: idx, xMax: idx,
+      borderColor: 'rgba(255,230,0,0.6)',
+      borderWidth: 1.5,
+      borderDash: [3, 4],
+      label: {
+        content: txt,
+        display: true,
+        position: pos,
+        backgroundColor: 'rgba(255,230,0,0.95)',
+        color: '#111',
+        font: { size: 9, weight: '700', family: 'Inter' },
+        padding: { x: 6, y: 4 },
+        borderRadius: 3,
+        rotation: -75,
+      }
+    };
+  });
+
   new Chart(document.getElementById('chartDevBar'), {
     type: 'bar',
     plugins: [ChartDataLabels],
@@ -308,12 +342,13 @@ function buildDevBar() {
       responsive:true,
       plugins: {
         legend: { position:'top', labels:{ color:'#AAA', font:{family:'Inter',size:11}, boxWidth:12 } },
+        annotation: { annotations: evAnno },
       },
       scales: {
         x: { stacked:true, grid:{color:'#222'}, ticks:{color:'#888',font:{family:'Inter',size:10},maxRotation:0} },
         y: { stacked:true, grid:{color:'#222'}, ticks:{color:'#888',font:{family:'Inter',size:11}} },
       },
-      layout: { padding:{ top:24 } }
+      layout: { padding:{ top:80 } }
     }
   });
 }
