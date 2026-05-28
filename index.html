@@ -301,14 +301,14 @@ function buildDevBar() {
     },
   ];
 
-  // Anotações de eventos
+  // Anotações de eventos — horizontal, data + nome, caixa amarela
   const EVENTS = [
-    ['04/05', ['LIVE LANÇAMENTO'],                    0.08],
-    ['05/05', ['NOVOS INCENTIVOS', 'PREÇO ESPECIAL'], 0.28],
-    ['08/05', ['PREÇO ESPECIAL'],                     0.08],
-    ['18/05', ['PREÇO ESPECIAL', 'CAMPANHA EMP&TOP'], 0.08],
-    ['19/05', ['NOVOS INCENTIVOS'],                   0.28],
-    ['26/05', ['PREÇO ESPECIAL'],                     0.08],
+    ['04/05', ['04/05', 'LIVE LANÇAMENTO'],                      0.02],
+    ['05/05', ['05/05', 'NOVOS INCENTIVOS', 'PREÇO ESPECIAL'],   0.22],
+    ['08/05', ['08/05', 'PREÇO ESPECIAL'],                       0.02],
+    ['18/05', ['18/05', 'PREÇO ESPECIAL', 'CAMPANHA EMP & TOP'], 0.02],
+    ['19/05', ['19/05', 'NOVOS INCENTIVOS'],                     0.28],
+    ['26/05', ['26/05', 'PREÇO ESPECIAL'],                       0.02],
   ];
   const evAnno = {};
   EVENTS.forEach(([dt, txt, pos], i) => {
@@ -317,9 +317,9 @@ function buildDevBar() {
     evAnno['ev'+i] = {
       type: 'line',
       xMin: idx, xMax: idx,
-      borderColor: 'rgba(255,230,0,0.6)',
+      borderColor: 'rgba(255,230,0,0.75)',
       borderWidth: 1.5,
-      borderDash: [3, 4],
+      borderDash: [4, 4],
       label: {
         content: txt,
         display: true,
@@ -327,9 +327,9 @@ function buildDevBar() {
         backgroundColor: 'rgba(255,230,0,0.95)',
         color: '#111',
         font: { size: 9, weight: '700', family: 'Inter' },
-        padding: { x: 6, y: 4 },
-        borderRadius: 3,
-        rotation: -75,
+        padding: { x: 8, y: 5 },
+        borderRadius: 4,
+        textAlign: 'center',
       }
     };
   });
@@ -348,7 +348,7 @@ function buildDevBar() {
         x: { stacked:true, grid:{color:'#222'}, ticks:{color:'#888',font:{family:'Inter',size:10},maxRotation:0} },
         y: { stacked:true, grid:{color:'#222'}, ticks:{color:'#888',font:{family:'Inter',size:11}} },
       },
-      layout: { padding:{ top:80 } }
+      layout: { padding:{ top:120 } }
     }
   });
 }
