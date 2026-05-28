@@ -25,10 +25,16 @@
     .topbar-title{color:#AAA;font-size:12px;}
 
     /* HERO */
-    .hero{background:var(--yellow);padding:32px 40px 28px;}
+    .hero{background:var(--yellow);padding:32px 40px 28px;display:flex;align-items:center;justify-content:space-between;}
+    .hero-left{flex:1;}
     .hero-badge{display:inline-block;background:var(--black);color:var(--yellow);font-size:10px;font-weight:700;letter-spacing:1.2px;padding:4px 14px;border-radius:20px;text-transform:uppercase;margin-bottom:14px;}
     .hero-title{font-size:38px;font-weight:900;color:var(--black);line-height:1.1;margin-bottom:10px;letter-spacing:-1px;}
     .hero-subtitle{font-size:12px;color:#3A3A3A;}
+    .hero-card{background:var(--black);border-radius:12px;padding:18px 24px;min-width:200px;text-align:center;}
+    .hero-card-tag{font-size:9px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;}
+    .hero-card-product{font-size:13px;font-weight:700;color:#FFF;margin-bottom:4px;}
+    .hero-card-price{font-size:36px;font-weight:900;color:var(--yellow);line-height:1;margin-bottom:6px;}
+    .hero-card-nivel{font-size:11px;color:#888;font-weight:500;}
 
     /* TABS */
     .tabs-bar{background:var(--white);border-bottom:2px solid var(--border);padding:0 40px;display:flex;gap:4px;}
@@ -101,9 +107,17 @@
   <span class="topbar-title">Performance por Nível · Abr–Mai/26</span>
 </div>
 <div class="hero">
-  <div class="hero-badge">Resellers · 2026</div>
-  <div class="hero-title">Performance por Nível</div>
-  <div class="hero-subtitle">Comparativo Abril × Maio · Atualizado em 28/05/2026</div>
+  <div class="hero-left">
+    <div class="hero-badge">Resellers · 2026</div>
+    <div class="hero-title">Performance por Nível</div>
+    <div class="hero-subtitle">Comparativo Abril × Maio · Atualizado em 28/05/2026</div>
+  </div>
+  <div class="hero-card">
+    <div class="hero-card-tag">Preço Especial · Mai/26</div>
+    <div class="hero-card-product">Point Pro 3</div>
+    <div class="hero-card-price">R$ 89</div>
+    <div class="hero-card-nivel">Nível Aprendiz</div>
+  </div>
 </div>
 <div class="tabs-bar">
   <div class="tab active" onclick="showTab('devices',this)">Devices Sold</div>
