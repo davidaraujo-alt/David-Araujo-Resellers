@@ -185,9 +185,11 @@
 
 <script>
 // ── Data ──────────────────────────────────────────────────────────────────────
-const MIX_LABELS = ["Abril/26", "Maio/26"];
-const MIX_PRO    = [4677, 4182];
-const MIX_SMART  = [987, 657];
+const MIX_N_LABELS  = ["Aprendiz", "Especialista", "Empreend.", "Top Empr."];
+const MIX_PRO_ABR   = [1537, 549, 651, 1940];
+const MIX_SMART_ABR = [207, 115, 140, 525];
+const MIX_PRO_MAI   = [2222, 488, 593, 879];
+const MIX_SMART_MAI = [224, 64, 158, 211];
 
 const DEV_LABELS = ["01/05", "02/05", "03/05", "04/05", "05/05", "06/05", "07/05", "08/05", "09/05", "10/05", "11/05", "12/05", "13/05", "14/05", "15/05", "16/05", "17/05", "18/05", "19/05", "20/05", "21/05", "22/05", "23/05", "24/05", "25/05", "26/05", "27/05"];
 const DEV_APR    = [32, 24, 28, 86, 94, 134, 127, 123, 56, 52, 145, 123, 82, 111, 73, 44, 43, 120, 122, 99, 127, 125, 58, 50, 118, 151, 99];
@@ -336,48 +338,62 @@ function buildLine() {
   });
 }
 
-// ── Mix Pro 3 vs Smart 2 ─────────────────────────────────────────────────────
+// ── Mix Pro 3 vs Smart 2 por nível ───────────────────────────────────────────
+// Abr = cores sólidas | Mai = cores translúcidas com borda
+// Cada nível tem 2 barras empilhadas (stack: abr / stack: mai)
 function buildMixChart() {
+  const dlBase = { anchor:'center', align:'center', font:{size:9,weight:'700',family:'Inter'}, formatter: v => v>0?v.toLocaleString('pt-BR'):'' };
+  const dlTop  = { anchor:'end',    align:'top',    font:{size:10,weight:'700',family:'Inter'},
+    formatter: (v,ctx) => {
+      const stk = ctx.dataset.stack;
+      const i   = ctx.dataIndex;
+      const sum = ctx.chart.data.datasets
+        .filter(d => d.stack===stk)
+        .reduce((s,d)=>s+(d.data[i]||0),0);
+      return sum>0?sum.toLocaleString('pt-BR'):'';
+    }
+  };
+
   new Chart(document.getElementById('chartMix'), {
     type: 'bar',
     plugins: [ChartDataLabels],
     data: {
-      labels: MIX_LABELS,
+      labels: MIX_N_LABELS,
       datasets: [
         {
-          label: 'Point Pro 3',
-          data: MIX_PRO,
-          backgroundColor: '#FFE600',
-          borderRadius: 6,
-          datalabels: {
-            anchor: 'end', align: 'top',
-            color: '#AAA', font: { size: 11, weight: '700', family: 'Inter' },
-            formatter: v => v.toLocaleString('pt-BR')
-          }
+          label: 'Pro 3 — Abr',   data: MIX_PRO_ABR,
+          backgroundColor: '#FFE600', stack: 'abr', borderRadius:{topLeft:4,topRight:4},
+          datalabels: { ...dlBase, color:'#111' }
         },
         {
-          label: 'Point Smart 2',
-          data: MIX_SMART,
-          backgroundColor: '#CCCCCC',
-          borderRadius: 6,
-          datalabels: {
-            anchor: 'end', align: 'top',
-            color: '#AAA', font: { size: 11, weight: '700', family: 'Inter' },
-            formatter: v => v.toLocaleString('pt-BR')
-          }
+          label: 'Smart 2 — Abr', data: MIX_SMART_ABR,
+          backgroundColor: '#4A4A4A', stack: 'abr',
+          datalabels: { labels: { v:{...dlBase,color:'#CCC'}, t:{...dlTop,color:'#888'} } }
+        },
+        {
+          label: 'Pro 3 — Mai',   data: MIX_PRO_MAI,
+          backgroundColor: 'rgba(255,230,0,0.45)', borderColor:'#FFE600', borderWidth:1.5,
+          stack: 'mai', borderRadius:{topLeft:4,topRight:4},
+          datalabels: { ...dlBase, color:'#888' }
+        },
+        {
+          label: 'Smart 2 — Mai', data: MIX_SMART_MAI,
+          backgroundColor: 'rgba(180,180,180,0.45)', borderColor:'#AAA', borderWidth:1.5,
+          stack: 'mai',
+          datalabels: { labels: { v:{...dlBase,color:'#CCC'}, t:{...dlTop,color:'#AAA'} } }
         },
       ]
     },
     options: {
       responsive: true,
       plugins: {
-        legend: { position: 'top', labels: { color: '#AAA', font: { family: 'Inter', size: 12 }, boxWidth: 12 } },
+        legend: { position:'top', labels:{ color:'#AAA', font:{family:'Inter',size:11}, boxWidth:12 } },
       },
       scales: {
-        x: { grid: { color: '#222' }, ticks: { color: '#888', font: { family: 'Inter', size: 12 } } },
-        y: { grid: { color: '#222' }, ticks: { color: '#888', font: { family: 'Inter', size: 11 } }, beginAtZero: true },
+        x: { stacked:true, grid:{color:'#222'}, ticks:{color:'#888',font:{family:'Inter',size:11}} },
+        y: { stacked:true, grid:{color:'#222'}, ticks:{color:'#888',font:{family:'Inter',size:11}}, beginAtZero:true },
       },
-      layout: { padding: { top: 28 } }
+      layout: { padding:{ top:32 } }
     }
   });
 }
