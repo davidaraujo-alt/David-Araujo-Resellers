@@ -305,10 +305,10 @@ function buildDevBar() {
   // position:'end' ancora no TOPO da escala Y; yAdjust negativo empurra acima das barras
   const EVENTS = [
     ['04/05', ['🎥 04/05', 'LIVE LANÇAMENTO'],                        -8],
-    ['05/05', ['💰🎯 05/05', 'NOVOS INCENTIVOS', 'PREÇO ESPECIAL'],   -62],
+    ['05/05', ['💰🎯 05/05', 'NOVOS INCENTIVOS', 'PREÇO ESPECIAL'],   -45],
     ['08/05', ['🎯 08/05', 'PREÇO ESPECIAL'],                         -8],
     ['18/05', ['🎯📢 18/05', 'PREÇO ESPECIAL', 'CAMPANHA EMP & TOP'], -8],
-    ['19/05', ['💰 19/05', 'NOVOS INCENTIVOS'],                       -62],
+    ['19/05', ['💰 19/05', 'NOVOS INCENTIVOS'],                       -45],
     ['26/05', ['🎯 26/05', 'PREÇO ESPECIAL'],                         -8],
   ];
   const evAnno = {};
@@ -321,6 +321,7 @@ function buildDevBar() {
       borderColor: 'rgba(255,230,0,0.75)',
       borderWidth: 1.5,
       borderDash: [4, 4],
+      clip: false,
       label: {
         content: txt,
         display: true,
@@ -344,7 +345,7 @@ function buildDevBar() {
       responsive:true,
       plugins: {
         legend: { position:'top', labels:{ color:'#AAA', font:{family:'Inter',size:11}, boxWidth:12 } },
-        annotation: { annotations: evAnno },
+        annotation: { clip: false, annotations: evAnno },
       },
       scales: {
         x: { stacked:true, grid:{color:'#222'}, ticks:{color:'#888',font:{family:'Inter',size:10},maxRotation:0} },
