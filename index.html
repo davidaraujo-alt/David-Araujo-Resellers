@@ -301,17 +301,18 @@ function buildDevBar() {
     },
   ];
 
-  // Anotações de eventos — horizontal, data + nome, caixa amarela
+  // Anotações de eventos — acima das barras, caixa amarela
+  // yAdjust negativo = sobe acima do topo do gráfico (para dentro do padding)
   const EVENTS = [
-    ['04/05', ['04/05', 'LIVE LANÇAMENTO'],                      0.02],
-    ['05/05', ['05/05', 'NOVOS INCENTIVOS', 'PREÇO ESPECIAL'],   0.22],
-    ['08/05', ['08/05', 'PREÇO ESPECIAL'],                       0.02],
-    ['18/05', ['18/05', 'PREÇO ESPECIAL', 'CAMPANHA EMP & TOP'], 0.02],
-    ['19/05', ['19/05', 'NOVOS INCENTIVOS'],                     0.28],
-    ['26/05', ['26/05', 'PREÇO ESPECIAL'],                       0.02],
+    ['04/05', ['04/05', 'LIVE LANÇAMENTO'],                      -22],
+    ['05/05', ['05/05', 'NOVOS INCENTIVOS', 'PREÇO ESPECIAL'],   -85],
+    ['08/05', ['08/05', 'PREÇO ESPECIAL'],                       -22],
+    ['18/05', ['18/05', 'PREÇO ESPECIAL', 'CAMPANHA EMP & TOP'], -22],
+    ['19/05', ['19/05', 'NOVOS INCENTIVOS'],                     -85],
+    ['26/05', ['26/05', 'PREÇO ESPECIAL'],                       -22],
   ];
   const evAnno = {};
-  EVENTS.forEach(([dt, txt, pos], i) => {
+  EVENTS.forEach(([dt, txt, yAdj], i) => {
     const idx = DEV_LABELS.findIndex(l => l === dt);
     if (idx < 0) return;
     evAnno['ev'+i] = {
@@ -323,7 +324,8 @@ function buildDevBar() {
       label: {
         content: txt,
         display: true,
-        position: pos,
+        position: 'start',
+        yAdjust: yAdj,
         backgroundColor: 'rgba(255,230,0,0.95)',
         color: '#111',
         font: { size: 9, weight: '700', family: 'Inter' },
@@ -348,7 +350,7 @@ function buildDevBar() {
         x: { stacked:true, grid:{color:'#222'}, ticks:{color:'#888',font:{family:'Inter',size:10},maxRotation:0} },
         y: { stacked:true, grid:{color:'#222'}, ticks:{color:'#888',font:{family:'Inter',size:11}} },
       },
-      layout: { padding:{ top:120 } }
+      layout: { padding:{ top:150 } }
     }
   });
 }
